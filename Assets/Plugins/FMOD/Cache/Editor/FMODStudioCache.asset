@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: FMOD/VRGAME/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639120373028655057
+  lastModified: 639121188703322314
   FileSizes:
   - Name: Desktop
     Value: 768
@@ -43,7 +43,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: -6339342950172992429}
   cacheVersion: 131856
-  cacheTime: 639120373028655057
+  cacheTime: 639121188703322314
   SerializableEventsDict:
   - key: event:/ambient
     index: 0
@@ -62,7 +62,7 @@ MonoBehaviour:
   Path: FMOD/VRGAME/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639120373028644575
+  lastModified: 639121188703307286
   FileSizes:
   - Name: Desktop
     Value: 248448
