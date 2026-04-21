@@ -38,6 +38,10 @@ namespace Valve.VR.InteractionSystem
 
 		public float arcDistance = 10.0f;
 
+
+		public bool showHints = false;
+
+
 		[Header( "Effects" )]
 		public Transform onActivateObjectTransform;
 		public Transform onDeactivateObjectTransform;
@@ -188,7 +192,11 @@ namespace Valve.VR.InteractionSystem
 
 			CheckForSpawnPoint();
 
-			Invoke( "ShowTeleportHint", 5.0f );
+			if (showHints)
+			{
+                Invoke("ShowTeleportHint", 5.0f);
+            }
+			
 		}
 
 
