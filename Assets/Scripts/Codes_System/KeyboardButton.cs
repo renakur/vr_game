@@ -10,6 +10,7 @@ public class KeyboardButton : MonoBehaviour
     public void HandleClick()
     {
         OnButtonClicked?.Invoke(myDigit);
+        KeycodeValidator.Instance.AddDigit(myDigit);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -23,7 +24,7 @@ public class KeyboardButton : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("PlayersHand"))
+        if (other.CompareTag("PlayerHand"))
         {
             isPressed = false;
         }
