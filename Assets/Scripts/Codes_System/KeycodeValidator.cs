@@ -65,6 +65,7 @@ public class KeycodeValidator : MonoBehaviour
         if (isCorrect)
         {
             codeCorrect?.Invoke(currentCode);
+            DoorVisuals.Instance.StartAnimation();
         }
         else
         {
