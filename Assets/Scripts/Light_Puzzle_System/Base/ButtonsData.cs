@@ -40,7 +40,7 @@ public class ButtonsData : MonoBehaviour
         Instance = this;
     }
 
-    public void LightShowcase(string name)
+    public void LightShowcase(ButtonsData data)
     {
         PuzzleLight light = new PuzzleLight();
 
