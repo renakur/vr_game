@@ -9,12 +9,13 @@ public class RespawnableObject : MonoBehaviour
 
     private Interactable _interactable;
     private Rigidbody _rigidbody;
-
-    [SerializeField] private float idleTimeBeforeReset = 5.0f;
     private Coroutine _resetCoroutine;
+    //public Hand attachedToHand;
 
     void Start()
     {
+        //attachedToHand = _interactable.attachedToHand;
+
         _startPosition = transform.position;
         _startRotation = transform.rotation;
 

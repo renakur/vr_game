@@ -58,7 +58,7 @@ public class SnapZone : MonoBehaviour
         item.transform.position = snapAnchor.position;
         item.transform.rotation = snapAnchor.rotation;
 
-        item.transform.SetParent(snapAnchor);
+        //item.transform.SetParent(snapAnchor);
 
         currentOverlappingItem = null;
     }
@@ -75,7 +75,7 @@ public class SnapZone : MonoBehaviour
             collider.isTrigger = false;
         }
 
-        snappedItem.transform.SetParent(null);
+        //snappedItem.transform.SetParent(null);
 
         snappedItem = null;
     }

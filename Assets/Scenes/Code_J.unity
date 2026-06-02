@@ -550,6 +550,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SnapZone4
       objectReference: {fileID: 0}
+    - target: {fileID: 7744623034601557307, guid: a58f7a24220dbb443a6b57d16c007479, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7936702015932398965, guid: a58f7a24220dbb443a6b57d16c007479, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.0170001
@@ -1273,6 +1277,10 @@ PrefabInstance:
     - target: {fileID: 7577113392136859939, guid: a58f7a24220dbb443a6b57d16c007479, type: 3}
       propertyPath: m_Name
       value: SnapZone3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744623034601557307, guid: a58f7a24220dbb443a6b57d16c007479, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7936702015932398965, guid: a58f7a24220dbb443a6b57d16c007479, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2046,6 +2054,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SnapZone5
       objectReference: {fileID: 0}
+    - target: {fileID: 7744623034601557307, guid: a58f7a24220dbb443a6b57d16c007479, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7936702015932398965, guid: a58f7a24220dbb443a6b57d16c007479, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.656
@@ -2190,6 +2202,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SnapZone1
       objectReference: {fileID: 0}
+    - target: {fileID: 7744623034601557307, guid: a58f7a24220dbb443a6b57d16c007479, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7936702015932398965, guid: a58f7a24220dbb443a6b57d16c007479, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.413
@@ -2273,7 +2289,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 220.898
+      value: 228.63
       objectReference: {fileID: 0}
     - target: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4064,7 +4080,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.54, y: 0.422, z: 232.73}
-  m_LocalScale: {x: 8.683205, y: 0.22972375, z: 7.2416325}
+  m_LocalScale: {x: 21.42407, y: 0.5667974, z: 17.86728}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -5460,9 +5476,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 692508695173590652, guid: 45edc96c05ac40c43a86ae244d3b0cdf, type: 3}
+      propertyPath: hideHandOnAttach
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4451977402702813981, guid: 45edc96c05ac40c43a86ae244d3b0cdf, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5813935689691577064, guid: 45edc96c05ac40c43a86ae244d3b0cdf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.29200006
+      value: -1.51
       objectReference: {fileID: 0}
     - target: {fileID: 5813935689691577064, guid: 45edc96c05ac40c43a86ae244d3b0cdf, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5470,7 +5494,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5813935689691577064, guid: 45edc96c05ac40c43a86ae244d3b0cdf, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 230.79599
+      value: 230.8539
       objectReference: {fileID: 0}
     - target: {fileID: 5813935689691577064, guid: 45edc96c05ac40c43a86ae244d3b0cdf, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5504,6 +5528,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Egg (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8467053829091565270, guid: 45edc96c05ac40c43a86ae244d3b0cdf, type: 3}
+      propertyPath: attachmentFlags
+      value: 84
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5520,6 +5548,10 @@ PrefabInstance:
     - target: {fileID: 7577113392136859939, guid: a58f7a24220dbb443a6b57d16c007479, type: 3}
       propertyPath: m_Name
       value: SnapZone2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744623034601557307, guid: a58f7a24220dbb443a6b57d16c007479, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7936702015932398965, guid: a58f7a24220dbb443a6b57d16c007479, type: 3}
       propertyPath: m_LocalPosition.x

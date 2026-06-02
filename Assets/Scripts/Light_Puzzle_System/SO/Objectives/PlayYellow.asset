@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8c1dba80a67a42418414a48acec66df, type: 3}
-  m_Name: Light_Puzzle
+  m_Script: {fileID: 11500000, guid: 1015ba31c41b068409602a0efe29abe5, type: 3}
+  m_Name: PlayYellow
   m_EditorClassIdentifier: 
-  Objectives:
-  - {fileID: 11400000, guid: 1ab32fc10079e8d4daa289b9459de894, type: 2}
+  IsCompleted: 0
+  light: Yellow
