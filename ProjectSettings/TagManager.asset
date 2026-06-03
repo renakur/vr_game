@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 3
   tags:
   - Anchor
+  - projectile
+  - FxTemporaire
+  - PlayerHand
   layers:
   - Default
   - TransparentFX
