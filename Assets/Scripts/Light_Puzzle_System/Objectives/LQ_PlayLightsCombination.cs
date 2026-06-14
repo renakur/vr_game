@@ -8,7 +8,7 @@ public class LQ_PlayLightsCombination : QuestObjective
 
     public override void Execute()
     {
-        ButtonsData.Instance.LightShowcase(light);
+        
         EndExecution();
     }
 
