@@ -6,6 +6,21 @@ public class PuzzleLight : MonoBehaviour
     [Tooltip("Add light that owns the script")]
     public Light l;
 
+    public bool showcaseEnded { get; private set; } = false;
+    public bool IsPlaying { get; private set; } = false;
+    public static PuzzleLight Instance { get; private set; }
+
+    public void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+    }
+
     public void Start()
     {
         if (l != null)
@@ -22,6 +37,7 @@ public class PuzzleLight : MonoBehaviour
 
     private IEnumerator PulseRoutine()
     {
+        IsPlaying = true;
         float pulseDuration = 1.0f;
 
         yield return StartCoroutine(FadeLight(0.0f, 3.5f, pulseDuration)); 
@@ -29,7 +45,10 @@ public class PuzzleLight : MonoBehaviour
 
         
         yield return StartCoroutine(FadeLight(0.0f, 3.5f, pulseDuration)); 
-        yield return StartCoroutine(FadeLight(3.5f, 0.0f, pulseDuration)); 
+        yield return StartCoroutine(FadeLight(3.5f, 0.0f, pulseDuration));
+
+        showcaseEnded = true;
+        IsPlaying = false;
     }
 
     
@@ -46,4 +65,6 @@ public class PuzzleLight : MonoBehaviour
 
         l.intensity = endIntensity;
     }
+
+    
 }

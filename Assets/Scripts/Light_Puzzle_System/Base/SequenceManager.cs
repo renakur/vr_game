@@ -1,0 +1,73 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class SequenceManager : MonoBehaviour
+{
+    public static SequenceManager Instance { get; private set; }
+
+    private List<LightColors> currentSequence = new List<LightColors>();
+    private int playerInputIndex = 0;
+
+    public bool isShowcaseRunning { get; private set; } = false;
+    public bool isPuzzleCompleted { get; private set; } = false;
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this) { Destroy(gameObject); return; }
+        Instance = this;
+    }
+
+    public void StartPuzzle(List<LightColors> sequenceToFollow)
+    {
+        currentSequence = sequenceToFollow;
+        playerInputIndex = 0;
+        isPuzzleCompleted = false;
+
+        StartCoroutine(PlayShowcaseRoutine());
+    }
+
+    private IEnumerator PlayShowcaseRoutine()
+    {
+        isShowcaseRunning = true;
+        LightCatcher.Instance.ResetAllButtons();
+
+        yield return new WaitForSeconds(1.0f);
+
+        foreach (LightColors color in currentSequence)
+        {
+            LightCatcher.Instance.TurnOnLight(color);
+
+            yield return new WaitForSeconds(2.1f);
+        }
+
+        isShowcaseRunning = false;
+       
+    }
+
+    public void OnButtonDetailsPressed(LightColors pressedColor)
+    {
+        
+        if (isShowcaseRunning || isPuzzleCompleted) return;
+
+        if (pressedColor == currentSequence[playerInputIndex])
+        {
+            playerInputIndex++;
+
+            if (playerInputIndex >= currentSequence.Count)
+            {
+                isPuzzleCompleted = true;
+            }
+        }
+        else
+        {
+            ResetAndRestartPuzzle();
+        }
+    }
+
+    private void ResetAndRestartPuzzle()
+    {
+        playerInputIndex = 0;
+        StartCoroutine(PlayShowcaseRoutine());
+    }
+}
