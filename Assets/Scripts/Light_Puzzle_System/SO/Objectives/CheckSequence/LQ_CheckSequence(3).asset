@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: LQ_CheckSequence(3)
   m_EditorClassIdentifier: 
   IsCompleted: 0
-  sequence: 
+  sequence: 010000000200000004000000

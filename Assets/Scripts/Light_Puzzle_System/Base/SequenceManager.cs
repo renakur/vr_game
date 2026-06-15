@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static LightCatcher;
 
 public class SequenceManager : MonoBehaviour
 {
@@ -67,7 +68,20 @@ public class SequenceManager : MonoBehaviour
 
     private void ResetAndRestartPuzzle()
     {
+        
         playerInputIndex = 0;
+        StartCoroutine(ErrorAndRestartRoutine());
+
+    }
+
+    private IEnumerator ErrorAndRestartRoutine()
+    {
+        isShowcaseRunning = true;
+
+        LightCatcher.Instance.TurnOnLight(LightColors.red);
+
+        yield return new WaitForSeconds(2.2f);
+
         StartCoroutine(PlayShowcaseRoutine());
     }
 }
