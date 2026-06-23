@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 57fe1fb94815bcb4f995c1e590209b99
+guid: 8dae96f6beb90ab43a12ecac57906b15
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: M_Identy_01
-    second: {fileID: 2100000, guid: 03bcde2c8cdec7a4aaa6579ac0b72812, type: 2}
+      name: M_Card
+    second: {fileID: 2100000, guid: 7d371ee99f687544d887a55fd60b81a0, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
