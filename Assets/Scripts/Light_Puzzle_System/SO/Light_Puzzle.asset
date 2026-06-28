@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: Light_Puzzle
   m_EditorClassIdentifier: 
   Objectives:
-  - {fileID: 11400000, guid: 5144cdece097ba8479163e4b9dc54047, type: 2}
   - {fileID: 11400000, guid: 1ab32fc10079e8d4daa289b9459de894, type: 2}
   - {fileID: 11400000, guid: 64d2265937ce84242b6a5a1c49b39e5e, type: 2}
   - {fileID: 11400000, guid: 1ab32fc10079e8d4daa289b9459de894, type: 2}
