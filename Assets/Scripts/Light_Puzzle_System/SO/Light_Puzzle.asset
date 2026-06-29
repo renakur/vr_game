@@ -13,5 +13,9 @@ MonoBehaviour:
   m_Name: Light_Puzzle
   m_EditorClassIdentifier: 
   Objectives:
+  - {fileID: 11400000, guid: 64d2265937ce84242b6a5a1c49b39e5e, type: 2}
+  - {fileID: 11400000, guid: 8dda81b24821d7f40a279dc2072c8d15, type: 2}
+  - {fileID: 11400000, guid: 761fbd502a446f54f94cc99f99fafe2c, type: 2}
+  - {fileID: 11400000, guid: e07482773e4c4f841884c4af486c2f60, type: 2}
   - {fileID: 11400000, guid: dab6dba706345dc419cad23e70db421d, type: 2}
   - {fileID: 11400000, guid: 5919f742b73cea944b3bc8d5e80a35b9, type: 2}
