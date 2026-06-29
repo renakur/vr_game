@@ -12,7 +12,7 @@ public class LQ_PlayLightsCombination : QuestObjective
 
     public override void OnUpdate()
     {
-        if (PuzzleLight.Instance.showcaseEnded)
+        if (LightCatcher.Instance.IsColorShowcaseEnded(lightColor))
         {
             EndExecution();
         }

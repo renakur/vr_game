@@ -8,6 +8,10 @@ public class ButtonTrigger : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
+        PressButton();
+    }
+    public void PressButton()
+    {
         if (SequenceManager.Instance != null && SequenceManager.Instance.isShowcaseRunning)
             return;
 

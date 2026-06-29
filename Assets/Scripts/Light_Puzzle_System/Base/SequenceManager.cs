@@ -13,9 +13,16 @@ public class SequenceManager : MonoBehaviour
     public bool isShowcaseRunning { get; private set; } = false;
     public bool isPuzzleCompleted { get; private set; } = false;
 
+    private const float LIGHT_ANIMATION_DURATION = 4.0f;
+    private const float DELAY_BETWEEN_LIGHTS = 0.5f;
+
     private void Awake()
     {
-        if (Instance != null && Instance != this) { Destroy(gameObject); return; }
+        if (Instance != null && Instance != this)
+        { 
+            Destroy(gameObject); return; 
+        }
+
         Instance = this;
     }
 
@@ -33,13 +40,13 @@ public class SequenceManager : MonoBehaviour
         isShowcaseRunning = true;
         LightCatcher.Instance.ResetAllButtons();
 
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(4.0f);
 
         foreach (LightColors color in currentSequence)
         {
             LightCatcher.Instance.TurnOnLight(color);
 
-            yield return new WaitForSeconds(2.1f);
+            yield return new WaitForSeconds(LIGHT_ANIMATION_DURATION + DELAY_BETWEEN_LIGHTS);
         }
 
         isShowcaseRunning = false;
@@ -48,7 +55,6 @@ public class SequenceManager : MonoBehaviour
 
     public void OnButtonDetailsPressed(LightColors pressedColor)
     {
-        
         if (isShowcaseRunning || isPuzzleCompleted) return;
 
         if (pressedColor == currentSequence[playerInputIndex])
@@ -80,7 +86,7 @@ public class SequenceManager : MonoBehaviour
 
         LightCatcher.Instance.TurnOnLight(LightColors.red);
 
-        yield return new WaitForSeconds(2.2f);
+        yield return new WaitForSeconds(LIGHT_ANIMATION_DURATION + 1.0f);
 
         StartCoroutine(PlayShowcaseRoutine());
     }

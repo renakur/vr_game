@@ -8,19 +8,7 @@ public class PuzzleLight : MonoBehaviour
 
     public bool showcaseEnded { get; private set; } = false;
     public bool IsPlaying { get; private set; } = false;
-    public static PuzzleLight Instance { get; private set; }
-
-    public void Awake()
-    {
-        if (Instance != null && Instance != this)
-        {
-            Destroy(gameObject);
-            return;
-        }
-
-        Instance = this;
-    }
-
+   
     public void Start()
     {
         if (l != null)
@@ -31,6 +19,7 @@ public class PuzzleLight : MonoBehaviour
 
     public void LightShowcase()
     {
+        showcaseEnded = false;
         StopAllCoroutines();
         StartCoroutine(PulseRoutine());
     }

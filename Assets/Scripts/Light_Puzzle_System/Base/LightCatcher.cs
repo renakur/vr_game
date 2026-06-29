@@ -66,6 +66,18 @@ public class LightCatcher : MonoBehaviour
         return false;
     }
 
+    public bool IsColorShowcaseEnded(LightColors colorCheck)
+    {
+        foreach (var element in lightColors)
+        {
+            if (element.light == colorCheck && element.puzzleLight != null)
+            {
+                return element.puzzleLight.showcaseEnded;
+            }
+        }
+        return false;
+    }
+
     public bool IsAnyLightPlaying()
     {
         foreach (var element in lightColors)
