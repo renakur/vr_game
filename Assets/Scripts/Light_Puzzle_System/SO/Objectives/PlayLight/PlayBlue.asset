@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: PlayBlue
   m_EditorClassIdentifier: 
   IsCompleted: 0
-  lightColor: 1
+  lightColor: 2
