@@ -17,15 +17,20 @@ public class DoorVisuals : MonoBehaviour
 
         Instance = this;
     }
-
     public void StartAnimation()
     {
-        //animator.SetTrigger("OpenDoor");
-
+        
         foreach (var animator in animators)
         {
-            animator.SetTrigger("OpenDoor");
+            if (animator != null)
+            {
+               
+                animator.SetTrigger("OpenDoor");
+            }
+            else
+            {
+                Debug.LogWarning("[DoorVisuals]  (null)!");
+            }
         }
-
     }
 }

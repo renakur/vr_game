@@ -5,9 +5,19 @@ public class LQ_OpenTheDoor : QuestObjective
 {
     public override void Execute()
     {
-        DoorVisuals.Instance.StartAnimation();
+        if (DoorVisuals.Instance != null)
+        {
+            DoorVisuals.Instance.StartAnimation();
+        }
+        else
+        {
+            Debug.LogError("[QUEST] null");
+        }
+
         EndExecution();
     }
+ 
+
     public override void OnUpdate()
     {
 
