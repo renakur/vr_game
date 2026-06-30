@@ -3808,6 +3808,13 @@ MonoBehaviour:
   barrelPivot: {fileID: 1406169676}
   shootingSpeed: 40
   muzzleFlash: {fileID: 1782395880954752, guid: 3dd9cf2e209c504448f1c4c6835675cf, type: 3}
+  fireSound:
+    Guid:
+      Data1: 637899540
+      Data2: 1150812062
+      Data3: 1366317448
+      Data4: 815863396
+    Path: event:/gunshot
 --- !u!64 &1424662928
 MeshCollider:
   m_ObjectHideFlags: 0

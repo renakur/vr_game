@@ -156,6 +156,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e40a7270743e3af40950cb638b9bdbf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitSound:
+    Guid:
+      Data1: -1449411859
+      Data2: 1181962319
+      Data3: 1611536058
+      Data4: 1112573974
+    Path: event:/hitting_the_target
 --- !u!95 &356172774495676366
 Animator:
   serializedVersion: 7

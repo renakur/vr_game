@@ -1,6 +1,7 @@
 using UnityEngine;
 using Valve.VR;
 using Valve.VR.InteractionSystem;
+using FMODUnity;
 
 public class Gun : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class Gun : MonoBehaviour
     public Transform barrelPivot;
     public float shootingSpeed = 40f;
     public GameObject muzzleFlash;
+
+    [Header("gunshot sound FMOD")]
+    public EventReference fireSound;
 
     private Interactable interactable;
     private Collider gunCollider;
@@ -43,7 +47,7 @@ public class Gun : MonoBehaviour
         if (bullet == null || barrelPivot == null) return;
 
         GameObject spawnedBullet = Instantiate(bullet, barrelPivot.position, barrelPivot.rotation);
-        Rigidbody bulletrb = Instantiate(bullet, barrelPivot.position, barrelPivot.rotation).GetComponent<Rigidbody>();
+        Rigidbody bulletrb = spawnedBullet.GetComponent<Rigidbody>();
         Collider bulletCollider = spawnedBullet.GetComponent<Collider>();
 
         if (gunCollider != null && bulletCollider != null)
@@ -55,6 +59,19 @@ public class Gun : MonoBehaviour
         {
             
             bulletrb.linearVelocity = barrelPivot.forward * shootingSpeed;
+        }
+
+        if (!fireSound.IsNull)
+        {
+            
+            RuntimeManager.PlayOneShot(fireSound, barrelPivot.position);
+        }
+
+        if (muzzleFlash != null)
+        {
+            muzzleFlash.SetActive(true);
+            CancelInvoke("HideMuzzleFlash");
+            Invoke("HideMuzzleFlash", 0.05f);
         }
 
         if (muzzleFlash != null)
