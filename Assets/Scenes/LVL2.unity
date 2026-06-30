@@ -901,6 +901,14 @@ MonoBehaviour:
   animators:
   - {fileID: 9062758686689618401}
   - {fileID: 5714052454226386989}
+  doorOpenSound:
+    Guid:
+      Data1: -763198908
+      Data2: 1125075762
+      Data3: 604583332
+      Data4: 1691106603
+    Path: event:/door_opening
+  soundPoint: {fileID: 1279956049}
 --- !u!4 &245166789
 Transform:
   m_ObjectHideFlags: 0
@@ -2197,8 +2205,8 @@ GameObject:
   m_Component:
   - component: {fileID: 876585378}
   - component: {fileID: 876585377}
-  - component: {fileID: 876585376}
   - component: {fileID: 876585379}
+  - component: {fileID: 876585380}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2206,14 +2214,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &876585376
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 876585375}
-  m_Enabled: 1
 --- !u!20 &876585377
 Camera:
   m_ObjectHideFlags: 0
@@ -2324,6 +2324,20 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!114 &876585380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 876585375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nonRigidbodyVelocity: 0
+  attenuationObject: {fileID: 0}
 --- !u!1 &896939291
 GameObject:
   m_ObjectHideFlags: 0
@@ -2988,6 +3002,37 @@ Transform:
   - {fileID: 234102864}
   m_Father: {fileID: 345103053}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1279956048
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1279956049}
+  m_Layer: 0
+  m_Name: SoundPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1279956049
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1279956048}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2, y: 0, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1312759626}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1296446634
 GameObject:
   m_ObjectHideFlags: 0
@@ -3251,6 +3296,7 @@ Transform:
   - {fileID: 210635597955117488}
   - {fileID: 1794087864986131890}
   - {fileID: 3415035979752171020}
+  - {fileID: 1279956049}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1350622862
@@ -4379,6 +4425,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114000013786455312, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
+    - {fileID: 8194540, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -4820,6 +4867,21 @@ MonoBehaviour:
   currentCode: 
   currentIndex: 0
   isCorrect: 1
+  correctSound:
+    Guid:
+      Data1: 1841012953
+      Data2: 1250338608
+      Data3: 764203694
+      Data4: -1354131649
+    Path: event:/correct
+  incorrectSound:
+    Guid:
+      Data1: 1211497039
+      Data2: 1129755680
+      Data3: 1890927237
+      Data4: -34426354
+    Path: event:/wrong
+  soundLocation: {fileID: 210635597955117488}
   codeCorrect:
     m_PersistentCalls:
       m_Calls:
@@ -4874,7 +4936,7 @@ Transform:
   m_GameObject: {fileID: 2118531805}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9478,6 +9540,13 @@ MonoBehaviour:
   OnButtonClicked:
     m_PersistentCalls:
       m_Calls: []
+  beepSound:
+    Guid:
+      Data1: -297036656
+      Data2: 1169476850
+      Data3: 74698370
+      Data4: -1511854182
+    Path: event:/door_code_click
 --- !u!64 &4994793309068190729
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9515,7 +9584,7 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
@@ -10140,6 +10209,13 @@ MonoBehaviour:
   OnButtonClicked:
     m_PersistentCalls:
       m_Calls: []
+  beepSound:
+    Guid:
+      Data1: -297036656
+      Data2: 1169476850
+      Data3: 74698370
+      Data4: -1511854182
+    Path: event:/door_code_click
 --- !u!64 &5630311908941669045
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -10177,7 +10253,7 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
@@ -10601,6 +10677,13 @@ MonoBehaviour:
   OnButtonClicked:
     m_PersistentCalls:
       m_Calls: []
+  beepSound:
+    Guid:
+      Data1: -297036656
+      Data2: 1169476850
+      Data3: 74698370
+      Data4: -1511854182
+    Path: event:/door_code_click
 --- !u!64 &5788716554807483895
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -10638,7 +10721,7 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
@@ -12109,6 +12192,13 @@ MonoBehaviour:
   OnButtonClicked:
     m_PersistentCalls:
       m_Calls: []
+  beepSound:
+    Guid:
+      Data1: -297036656
+      Data2: 1169476850
+      Data3: 74698370
+      Data4: -1511854182
+    Path: event:/door_code_click
 --- !u!64 &7108075369536758300
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -12146,7 +12236,7 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
@@ -12854,6 +12944,13 @@ MonoBehaviour:
   OnButtonClicked:
     m_PersistentCalls:
       m_Calls: []
+  beepSound:
+    Guid:
+      Data1: -297036656
+      Data2: 1169476850
+      Data3: 74698370
+      Data4: -1511854182
+    Path: event:/door_code_click
 --- !u!64 &7685191336360677105
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -12891,7 +12988,7 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
@@ -13763,6 +13860,13 @@ MonoBehaviour:
   OnButtonClicked:
     m_PersistentCalls:
       m_Calls: []
+  beepSound:
+    Guid:
+      Data1: -297036656
+      Data2: 1169476850
+      Data3: 74698370
+      Data4: -1511854182
+    Path: event:/door_code_click
 --- !u!64 &8491055579123189703
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -13800,7 +13904,7 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
@@ -14375,6 +14479,13 @@ MonoBehaviour:
   OnButtonClicked:
     m_PersistentCalls:
       m_Calls: []
+  beepSound:
+    Guid:
+      Data1: -297036656
+      Data2: 1169476850
+      Data3: 74698370
+      Data4: -1511854182
+    Path: event:/door_code_click
 --- !u!64 &8869433189253982161
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -14412,7 +14523,7 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
@@ -14569,6 +14680,13 @@ MonoBehaviour:
   OnButtonClicked:
     m_PersistentCalls:
       m_Calls: []
+  beepSound:
+    Guid:
+      Data1: -297036656
+      Data2: 1169476850
+      Data3: 74698370
+      Data4: -1511854182
+    Path: event:/door_code_click
 --- !u!64 &8947129656371439000
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -14606,7 +14724,7 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
@@ -15061,6 +15179,13 @@ MonoBehaviour:
   OnButtonClicked:
     m_PersistentCalls:
       m_Calls: []
+  beepSound:
+    Guid:
+      Data1: -297036656
+      Data2: 1169476850
+      Data3: 74698370
+      Data4: -1511854182
+    Path: event:/door_code_click
 --- !u!64 &9086618302581936632
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -15098,7 +15223,7 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
@@ -15225,6 +15350,13 @@ MonoBehaviour:
   OnButtonClicked:
     m_PersistentCalls:
       m_Calls: []
+  beepSound:
+    Guid:
+      Data1: -297036656
+      Data2: 1169476850
+      Data3: 74698370
+      Data4: -1511854182
+    Path: event:/door_code_click
 --- !u!64 &9108782465425616197
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -15262,7 +15394,7 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5

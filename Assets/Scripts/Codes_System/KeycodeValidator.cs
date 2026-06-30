@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
+using FMODUnity; // Подключаем FMOD
 
 public class KeycodeValidator : MonoBehaviour
 {
@@ -10,6 +11,11 @@ public class KeycodeValidator : MonoBehaviour
     public int currentIndex = 0;
     public bool isCorrect = true;
     private bool isLocked;
+
+    [Header("FMOD")]
+    public EventReference correctSound;   
+    public EventReference incorrectSound; 
+    public Transform soundLocation;       
 
     [SerializeField] private UnityEvent<int[]> codeCorrect;
     [SerializeField] private UnityEvent<int[]> codeIncorrect;
@@ -42,7 +48,7 @@ public class KeycodeValidator : MonoBehaviour
         currentIndex++;
 
         displayCode?.Invoke(currentCode);
-        
+
         if (currentIndex == correctCode.Length)
         {
             CheckCode();
@@ -62,13 +68,22 @@ public class KeycodeValidator : MonoBehaviour
             }
         }
 
+        
+        GameObject source = soundLocation != null ? soundLocation.gameObject : gameObject;
+
         if (isCorrect)
         {
+
+            if (!correctSound.IsNull) RuntimeManager.PlayOneShot(correctSound);
+
             codeCorrect?.Invoke(currentCode);
             DoorVisuals.Instance.StartAnimation();
         }
         else
         {
+
+            if (!incorrectSound.IsNull) RuntimeManager.PlayOneShot(incorrectSound);
+
             codeIncorrect?.Invoke(currentCode);
             Clear();
         }
@@ -79,7 +94,7 @@ public class KeycodeValidator : MonoBehaviour
         isLocked = true;
         currentIndex = 0;
         currentCode = new int[correctCode.Length];
-    
+
         StartCoroutine(Reset());
     }
 

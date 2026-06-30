@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{f41b6c7c-9713-457b-9959-569c4df81ca3}">
+		<property name="assetPath">
+			<value>freesound_community-door-open-95865.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>1.3844897959183673</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{2a8ec34b-a0bd-485c-ba61-30e4596c9f8a}</destination>
+		</relationship>
+	</object>
+</objects>

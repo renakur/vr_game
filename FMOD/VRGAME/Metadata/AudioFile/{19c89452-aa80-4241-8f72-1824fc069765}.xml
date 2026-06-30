@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{19c89452-aa80-4241-8f72-1824fc069765}">
+		<property name="assetPath">
+			<value>cartoon-music-game-sfx-digital-bell-correct-answer-2-499500.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.933061224489796</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{2a8ec34b-a0bd-485c-ba61-30e4596c9f8a}</destination>
+		</relationship>
+	</object>
+</objects>

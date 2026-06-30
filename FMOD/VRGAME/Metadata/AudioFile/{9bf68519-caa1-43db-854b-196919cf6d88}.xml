@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{9bf68519-caa1-43db-854b-196919cf6d88}">
+		<property name="assetPath">
+			<value>edr-beep-sound-8333.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.1306122448979592</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{2a8ec34b-a0bd-485c-ba61-30e4596c9f8a}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{9ab5dd5b-f300-4fbb-b957-b59c8b152040}">
+		<property name="assetPath">
+			<value>freesoundsxx-button-press-beep-269718.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.0971428571428572</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{2a8ec34b-a0bd-485c-ba61-30e4596c9f8a}</destination>
+		</relationship>
+	</object>
+</objects>

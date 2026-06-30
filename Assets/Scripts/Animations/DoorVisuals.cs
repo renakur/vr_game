@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using FMODUnity;
 using UnityEngine;
 
 public class DoorVisuals : MonoBehaviour
@@ -6,6 +7,8 @@ public class DoorVisuals : MonoBehaviour
     [SerializeField] private List<Animator> animators = new List<Animator>();
 
     public static DoorVisuals Instance { get; private set; }
+    public EventReference doorOpenSound;
+    public Transform soundPoint;
 
     private void Awake()
     {
@@ -24,8 +27,11 @@ public class DoorVisuals : MonoBehaviour
         {
             if (animator != null)
             {
-               
+                
+
                 animator.SetTrigger("OpenDoor");
+
+                RuntimeManager.PlayOneShotAttached(doorOpenSound, soundPoint.gameObject);
             }
             else
             {
