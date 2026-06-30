@@ -31,6 +31,9 @@
 		<relationship name="parameters">
 			<destination>{dd39981a-f48b-4f76-bd3f-d53cd3a5d1bc}</destination>
 		</relationship>
+		<relationship name="banks">
+			<destination>{5ad6b12e-bf4d-49f2-9402-1e5af0c87e00}</destination>
+		</relationship>
 	</object>
 	<object class="EventMixer" id="{a9b683d8-47ef-4517-9fd9-6f18c012fab6}">
 		<relationship name="masterBus">
@@ -79,7 +82,11 @@
 			<destination>{a9b683d8-47ef-4517-9fd9-6f18c012fab6}</destination>
 		</relationship>
 	</object>
-	<object class="MultiSound" id="{a0441dd1-661d-4683-a5a8-b6556f5b79c3}" />
+	<object class="MultiSound" id="{a0441dd1-661d-4683-a5a8-b6556f5b79c3}">
+		<relationship name="sounds">
+			<destination>{e3ffe564-c539-44b2-9a12-772c8e587b1f}</destination>
+		</relationship>
+	</object>
 	<object class="MixerBusEffectChain" id="{a9a44d55-7b08-498b-98d5-d8d3766e6e91}">
 		<relationship name="effects">
 			<destination>{2b769e98-2548-42c2-bf04-5fa1ffc004ff}</destination>
@@ -93,7 +100,32 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{7986d1cc-6dd5-4951-90c6-2be0242b225b}" />
+	<object class="SingleSound" id="{e3ffe564-c539-44b2-9a12-772c8e587b1f}">
+		<relationship name="modulators">
+			<destination>{2307bc5e-62ba-4393-ad2c-a7c90132e8de}</destination>
+			<destination>{300fb981-9c36-4df7-865a-94ad17318f02}</destination>
+		</relationship>
+		<relationship name="audioFile">
+			<destination>{ba74b7d0-407d-41a5-a123-cc8e1e2374d9}</destination>
+		</relationship>
+	</object>
 	<object class="MixerBusFader" id="{2b769e98-2548-42c2-bf04-5fa1ffc004ff}" />
 	<object class="MixerBusFader" id="{786f732e-7c5e-445a-9b8d-a98a89b728eb}" />
 	<object class="SpatialiserEffect" id="{fb74bea6-56f4-49e9-9376-f5fb0f0533ef}" />
+	<object class="RandomizerModulator" id="{2307bc5e-62ba-4393-ad2c-a7c90132e8de}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>pitch</value>
+		</property>
+		<property name="amount">
+			<value>11.5</value>
+		</property>
+	</object>
+	<object class="RandomizerModulator" id="{300fb981-9c36-4df7-865a-94ad17318f02}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>volume</value>
+		</property>
+		<property name="amount">
+			<value>6</value>
+		</property>
+	</object>
 </objects>
