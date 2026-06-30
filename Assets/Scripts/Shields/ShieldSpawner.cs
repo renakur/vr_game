@@ -20,35 +20,30 @@ public class ShieldSpawner : MonoBehaviour
 
         if (availablePoints.Count < MAX_SHIELDS)
         {
-            
+            Debug.LogError("not enough spawners");
             return;
         }
 
         SpawnNextShield();
     }
 
-    void Update()
-    {
-        
-        if (currentShield == null && shieldsSpawnedCount < MAX_SHIELDS)
-        {
-            SpawnNextShield();
-        }
-    }
+    
 
     private void SpawnNextShield()
     {
-        
+        if (shieldsSpawnedCount >= MAX_SHIELDS) return;
+
         int randomIndex = Random.Range(0, availablePoints.Count);
         Transform chosenPoint = availablePoints[randomIndex];
 
-        
         availablePoints.RemoveAt(randomIndex);
 
-        currentShield = Instantiate(shieldPrefab, chosenPoint.position, chosenPoint.rotation);
+        GameObject currentShield = Instantiate(shieldPrefab, chosenPoint.position, chosenPoint.rotation);
         shieldsSpawnedCount++;
 
         Shield anim = currentShield.GetComponentInChildren<Shield>();
+        if (anim == null) anim = currentShield.GetComponent<Shield>();
+
         if (anim != null)
         {
             anim.OnShieldDestroyed += HandleShieldDestroyed;
@@ -62,12 +57,20 @@ public class ShieldSpawner : MonoBehaviour
         {
             AllShieldsDestroyed();
         }
+        else
+        {
+            SpawnNextShield(); 
+        }
     }
 
     private void AllShieldsDestroyed()
     {
         badge.SetActive(true);
-        DoorVisuals.Instance.StartAnimation();
-        
+
+        if (DoorVisuals.Instance != null)
+        {
+            DoorVisuals.Instance.StartAnimation();
+        }
+
     }
 }
