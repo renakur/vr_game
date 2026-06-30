@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 4701278272131003110}
   - component: {fileID: 7527125354411076728}
   - component: {fileID: 7935338261910499652}
+  - component: {fileID: 8188213054955144194}
   m_Layer: 0
   m_Name: Capsule Variant
   m_TagString: Untagged
@@ -274,3 +275,17 @@ MonoBehaviour:
   velocityAverageFrames: 5
   angularVelocityAverageFrames: 11
   estimateOnAwake: 0
+--- !u!114 &8188213054955144194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7508057626199464584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8d4cc6cf300b3e4bb1411c4e041030c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teleportAllowed: 1
+  overrideHoverLock: 1
