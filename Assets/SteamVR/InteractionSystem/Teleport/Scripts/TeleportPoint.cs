@@ -227,7 +227,9 @@ namespace Valve.VR.InteractionSystem
 			if ( !string.IsNullOrEmpty( switchToScene ) )
 			{
 				Debug.Log("<b>[SteamVR Interaction]</b> TeleportPoint: Hook up your level loading logic to switch to new scene: " + switchToScene, this);
-			}
+
+                UnityEngine.SceneManagement.SceneManager.LoadScene(switchToScene);
+            }
 			else
 			{
 				Debug.LogError("<b>[SteamVR Interaction]</b> TeleportPoint: Invalid scene name to switch to: " + switchToScene, this);

@@ -268,28 +268,28 @@ namespace Valve.VR.InteractionSystem
 			}
 
 			//If something is attached to the hand that is preventing teleport
-			if ( allowTeleportWhileAttached && !allowTeleportWhileAttached.teleportAllowed )
+			/*if (allowTeleportWhileAttached && !allowTeleportWhileAttached.teleportAllowed)
 			{
 				HidePointer();
-			}
-			else
+			}*/
+
 			{
-				if ( !visible && newPointerHand != null )
+				if (!visible && newPointerHand != null)
 				{
 					//Begin showing the pointer
-					ShowPointer( newPointerHand, oldPointerHand );
+					ShowPointer(newPointerHand, oldPointerHand);
 				}
-				else if ( visible )
+				else if (visible)
 				{
-					if ( newPointerHand == null && !IsTeleportButtonDown( pointerHand ) )
+					if (newPointerHand == null && !IsTeleportButtonDown(pointerHand))
 					{
 						//Hide the pointer
 						HidePointer();
 					}
-					else if ( newPointerHand != null )
+					else if (newPointerHand != null)
 					{
 						//Move the pointer to a new hand
-						ShowPointer( newPointerHand, oldPointerHand );
+						ShowPointer(newPointerHand, oldPointerHand);
 					}
 				}
 			}
@@ -915,7 +915,9 @@ namespace Valve.VR.InteractionSystem
 			}
 
 			Teleport.Player.Send( pointedAtTeleportMarker );
-		}
+
+           
+        }
 
 
 		//-------------------------------------------------

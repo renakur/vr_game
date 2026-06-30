@@ -4,6 +4,12 @@ public class TakeDamage : MonoBehaviour
 {
     public void ApplyDamage()
     {
-        Destroy(gameObject);
+        Transform rootTarget = transform;
+        while (rootTarget.parent != null && rootTarget.parent.GetComponent<ShieldSpawner>() == null)
+        {
+            rootTarget = rootTarget.parent;
+        }
+
+        Destroy(rootTarget.gameObject);
     }
 }
